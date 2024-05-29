@@ -1,18 +1,63 @@
-# Relational Analysis & Visualization
+# Relational Analysis & Visualization 📊
 
-This project is concerned with predicting the future sales of a product to facilitating the manufacturing and advertesing costs of the product. I developed this project in 2024-06-09. The ML-Model is using Linear Regression, which I was familiar with as I was working on this project because of my prior project of [Cyber Physical Systems of Systems](https://github.com/mrjex/Cyber-Physical-Systems-and-Sytems-of-Systems). Furthermore, it was my first time using Plotly to visualize charts. However, I didn't find it difficult since I had experience with a similar library for Javascript, Chartjs, from my [Bookster](https://github.com/mrjex/Bookster) project.
+> Advanced Sales Prediction System using Machine Learning and Interactive Data Visualization
 
-
-## Dataflow
-
-The initial input derived from the CSV file in `/dataset`, and the final output of the execution is stored in `/output-current` in two categories:
-
-**PNG:** A static artifact that denies interaction with the viewer. The advantage of using this format is the ease it brings for the viewers to quickly gain a brief overview of the visualized data.
-
-**HTML:** A dynamic artifact that allows interaction, such that the viewer can hover of the datapoints to get a closer look on the exact data-values.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-5.0%2B-blue)](https://plotly.com/)
+[![Linear Regression](https://img.shields.io/badge/ML-Linear%20Regression-green)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
 
-I sketched the flow of the different states obtainable in this project, which is demonstrated below. Before dissecting the semantics of the picture below, it's important to understand the general executional flow of this project:
+## 📑 Table of Contents
+- [Relational Analysis \& Visualization 📊](#relational-analysis--visualization-)
+  - [📑 Table of Contents](#-table-of-contents)
+  - [🎯 Overview](#-overview)
+  - [✨ Features](#-features)
+  - [🏗 System Architecture](#-system-architecture)
+    - [State Flow Explanation](#state-flow-explanation)
+    - [Execution Sequence](#execution-sequence)
+  - [Output / Generated Artifacts](#output--generated-artifacts)
+    - [Television Advertising Impact](#television-advertising-impact)
+    - [Newspaper Marketing Performance](#newspaper-marketing-performance)
+    - [Radio Campaign Results](#radio-campaign-results)
+  - [🚀 Installation](#-installation)
+  - [💻 Usage](#-usage)
+  - [🔧 Technical Details](#-technical-details)
+    - [Data Flow](#data-flow)
+    - [Technology Stack](#technology-stack)
+  - [🔗 Related Projects](#-related-projects)
+
+
+## 🎯 Overview
+
+This advanced analytics project leverages machine learning to predict product sales, optimizing manufacturing and advertising costs. Built in June 2024, it combines Linear Regression modeling with sophisticated data visualization techniques using Plotly, offering both static and interactive insights into sales patterns.
+
+## ✨ Features
+
+- **Predictive Analytics**: Linear Regression model for sales forecasting
+- **Dual Visualization Formats**:
+  - 📸 Static PNG outputs for quick insights
+  - 🔄 Interactive HTML reports for detailed analysis
+- **Automated Workflow**: Single-command execution with state management
+- **Historical Comparison**: Automatic tracking of previous analyses
+
+## 🏗 System Architecture
+
+The project follows a state-machine architecture for reliable data processing and output management:
+
+![Finite-State-Machine](Finite-State-Machine.PNG)
+
+### State Flow Explanation
+
+| State | Description | Function |
+|-------|-------------|----------|
+| S0 | Initial Execution | First-time repository run |
+| S1 | Setup Phase | No existing output verification |
+| S2 | Generation Phase | Creates new visualization outputs |
+| S3 | Comparison Phase | Analyzes current vs. previous results |
+| S4 | Storage Phase | Archives current outputs |
+
+### Execution Sequence
 
 You need to run the project by typing `./run.sh` in your terminal. This script invokes the following sequential steps:
     - 1: Store previous outputs from the latest execution of the project in "/output-previous" directory
@@ -43,25 +88,65 @@ You need to run the project by typing `./run.sh` in your terminal. This script i
 
 ## Output / Generated Artifacts
 
-![1-advertise-tv-units-sold](output-current/png/1-advertise-tv-units-sold.png)
+### Television Advertising Impact
+![TV Advertising Analysis](output-current/png/1-advertise-tv-units-sold.png)
 
-![2-advertise-newspapers-units-sold](output-current/png/2-advertise-newspapers-units-sold.png)
+*Correlation between TV advertising investment and units sold*
 
-![3-advertise-radio-units-sold](output-current/png/3-advertise-radio-units-sold.png)
+### Newspaper Marketing Performance
+![Newspaper Advertising Analysis](output-current/png/2-advertise-newspapers-units-sold.png)
 
+*Impact of newspaper advertising on sales metrics*
 
+### Radio Campaign Results
+![Radio Advertising Analysis](output-current/png/3-advertise-radio-units-sold.png)
 
-## Potential Installation Problems
+*Effectiveness of radio advertising campaigns*
 
-1. Make sure you have installed the necessary Python dependencies:
-    - Python CLI
-    - python pip
-    - pandas
-    - kaleido
-    
+## 🚀 Installation
 
-On Windows 10, you must install the following version of Kaleido, otherwise the latest version works perfectly fine
+1. **Prerequisites**
+   ```bash
+   python -m pip install pandas plotly kaleido
+   ```
 
+2. **Windows-Specific Setup**
+   ```bash
+   pip install --upgrade kaleido=="0.1.0.post1"
+   ```
+
+## 💻 Usage
+
+Execute the analysis pipeline with a single command:
+```bash
+./run.sh
 ```
-pip install --upgrade kaleido=="0.1.0.post1"
-```
+
+This will:
+1. Archive previous results
+2. Clear current output directory
+3. Generate new visualizations
+4. Store results in `/output-current`
+
+## 🔧 Technical Details
+
+### Data Flow
+- **Input**: CSV data from `/dataset`
+- **Output**: 
+  - `/output-current`: Latest analysis results
+  - `/output-previous`: Historical analysis archive
+
+### Technology Stack
+- **Analysis**: Python, Pandas
+- **Visualization**: Plotly
+- **Export**: Kaleido
+- **Version Control**: Git
+
+## 🔗 Related Projects
+
+- [Cyber Physical Systems of Systems](https://github.com/mrjex/Cyber-Physical-Systems-and-Sytems-of-Systems)
+- [Bookster](https://github.com/mrjex/Bookster)
+
+---
+
+*Built with 💻 and 📊 by Joel Mattsson*
