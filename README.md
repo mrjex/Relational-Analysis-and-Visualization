@@ -16,7 +16,7 @@
   - [🏗 System Architecture](#-system-architecture)
     - [State Flow Explanation](#state-flow-explanation)
     - [Execution Sequence](#execution-sequence)
-  - [Output / Generated Artifacts](#output--generated-artifacts)
+  - [📦 Generated Artifacts](#-generated-artifacts)
     - [Television Advertising Impact](#television-advertising-impact)
     - [Newspaper Marketing Performance](#newspaper-marketing-performance)
     - [Radio Campaign Results](#radio-campaign-results)
@@ -69,24 +69,23 @@ You need to run the project by typing `./run.sh` in your terminal. This script i
 ![Finite-State-Machine](Finite-State-Machine.PNG)
 
 **Explanation:**
-    - Each state or node in the picture represents a unique state in the execution of this repository
-    - States:
-        - S0: Run repository for the first time by running "./run.sh"
-        - S1: First time running the repository. No generated output in "/output-current". This implies that the code can't generate a previous output backup/comparison
-        - S2: The repository was successfully executed and the output files in "/output-current" was generated
-        - S3: Run repository for the (n + 1)th time, where n >= 1. There is now generated files in "/output-current" such that the code can generate the comparative .txt files in "/output-previous" directory
-        - S4: Store the "current" output files as .txt files in the (n + 1)th time, n >= 1
-    
-    - Given the explanation above, the sequence of the visited states for the users is predictable:
-        - First iteration: S0, S1, S2, S3, S4
-        - (N + 1)th iteration, N >= 1: S2, S4
-        - Final conclusion: S0, S1, S2, S3, S4, S2, S4, S2, S4, S2, S4, ..., (S2, S4) * N
-        - Simplified conclusion: S0, S1, S2, S3, S4, ((S2, S4) * N)
-        
+- Each state or node in the picture represents a unique state in the execution of this repository
+- States:
+    - **S0:** Run repository for the first time by running `./run.sh`
+    - **S1:** First time running the repository. No generated output in "/output-current". This implies that the code can't generate a previous output backup/comparison
+    - **S2:** The repository was successfully executed and the output files in `/output-current` was generated
+    - **S3:** Run repository for the **(n + 1)th** time, where **n >= 1**. There is now generated files in `/output-current` such that the code can generate the comparative .txt files in `/output-previous` directory
+    - **S4:** Store the "current" output files as *.txt* files in the (n + 1)th time, *n >= 1*
 
 
+Given the explanation above, the sequence of the visited states for the users is predictable:
+- **First iteration:** S0, S1, S2, S3, S4
+- **(N + 1)th iteration, N >= 1:** S2, S4
+- **Final conclusion:** S0, S1, S2, S3, S4, S2, S4, S2, S4, S2, S4, ..., (S2, S4) * N
+- **Simplified conclusion:** S0, S1, S2, S3, S4, ((S2, S4) * N)
 
-## Output / Generated Artifacts
+
+## 📦 Generated Artifacts
 
 ### Television Advertising Impact
 ![TV Advertising Analysis](output-current/png/1-advertise-tv-units-sold.png)
