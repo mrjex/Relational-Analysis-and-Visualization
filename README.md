@@ -1,6 +1,6 @@
 # Relational Analysis & Visualization 📊
 
-> Advanced Sales Prediction System using Machine Learning and Interactive Data Visualization
+> Sales Prediction System using Machine Learning and Interactive Data Visualization
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Plotly](https://img.shields.io/badge/Plotly-5.0%2B-blue)](https://plotly.com/)
@@ -140,12 +140,3 @@ This will:
 - **Visualization**: Plotly
 - **Export**: Kaleido
 - **Version Control**: Git
-
-## 🔗 Related Projects
-
-- [Cyber Physical Systems of Systems](https://github.com/mrjex/Cyber-Physical-Systems-and-Sytems-of-Systems)
-- [Bookster](https://github.com/mrjex/Bookster)
-
----
-
-*Built with 💻 and 📊 by Joel Mattsson*
